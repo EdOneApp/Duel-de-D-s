@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image:
+    radial-gradient(120% 80% at 50% 0%, rgba(18, 84, 63, 0.9) 0%, rgba(11, 61, 46, 1) 55%, rgba(7, 42, 32, 1) 100%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-5 py-3
+      font-display text-lg font-medium uppercase tracking-wide transition
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold text-table-dark shadow-gold hover:bg-gold-soft active:translate-y-px;
+  }
+
+  .btn-ghost {
+    @apply btn border border-cream/25 bg-white/5 text-cream hover:bg-white/10 active:translate-y-px;
+  }
+
+  .card {
+    @apply rounded-2xl border border-cream/10 bg-black/25 p-5 shadow-felt backdrop-blur-sm;
+  }
+
+  .field-label {
+    @apply mb-1 block font-display text-sm uppercase tracking-widest text-gold-soft;
+  }
+
+  .text-input {
+    @apply min-h-[44px] w-full rounded-xl border border-cream/20 bg-black/30 px-4 py-3 text-lg
+      text-cream placeholder:text-cream/40
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+  }
+}
+
+/* Dé 3D */
+.dice-scene {
+  perspective: 900px;
+}
+
+.dice-face {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Accessibilité : mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
