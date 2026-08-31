@@ -77,12 +77,16 @@ Créer un jeu web interactif de dés avec système de mise, jouable à deux sur 
 // next.config.js
 const nextConfig = {
   output: 'export',
-  basePath: '/Duel-de-D-s',
+  basePath: '',            // domaine personnalisé servi à la racine (duel.myoctogone.com)
   images: { unoptimized: true },
   trailingSlash: true,
 };
 ```
 
+- Le dépôt Pages est configuré avec le domaine personnalisé **duel.myoctogone.com**
+  (fichier `public/CNAME`), servi à la racine — d'où `basePath` vide.
+  Pour un déploiement sous `https://<user>.github.io/Duel-de-D-s/`, builder avec
+  `NEXT_PUBLIC_BASE_PATH=/Duel-de-D-s`.
 - Déploiement via **GitHub Actions** (`actions/deploy-pages`) sur push vers `main`.
 
 ### 4.3 Modèle de données
@@ -130,7 +134,7 @@ Mobile-first. Chrome / Safari (iOS) / Firefox / Edge, 2 dernières versions. 360
 
 1. Dépôt GitHub avec le code source complet. ✅
 2. Workflow GitHub Actions de déploiement automatique. ✅ (`.github/workflows/deploy.yml`)
-3. Site fonctionnel sur `https://EdOneApp.github.io/Duel-de-D-s/`. ✅
+3. Site fonctionnel sur `https://duel.myoctogone.com/`. ✅
 4. Ce document de spécifications. ✅
 
 ---

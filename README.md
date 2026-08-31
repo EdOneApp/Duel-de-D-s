@@ -2,9 +2,9 @@
 
 Jeu de dés avec mise, **2 joueurs en pass-and-play** sur un même écran.
 Next.js en **export statique**, aucun backend, fonctionne hors-ligne une fois chargé,
-déployé sur **GitHub Pages**.
+déployé sur **GitHub Pages** (domaine personnalisé).
 
-**Jouer :** https://EdOneApp.github.io/Duel-de-D-s/
+**Jouer :** https://duel.myoctogone.com/
 
 ---
 
@@ -54,8 +54,9 @@ npm run build      # génère out/ (export statique)
 npx serve out      # servir le build (voir note basePath ci-dessous)
 ```
 
-> **basePath :** le site est servi sous `/Duel-de-D-s` (nom du dépôt). Pour tester
-> `out/` en local sans ce préfixe : `NEXT_PUBLIC_BASE_PATH= npm run build`.
+> **basePath :** le site est servi à la racine du domaine personnalisé
+> `duel.myoctogone.com` (`basePath` vide). Pour un déploiement github.io sous
+> `/Duel-de-D-s` : `NEXT_PUBLIC_BASE_PATH=/Duel-de-D-s npm run build`.
 
 ---
 
